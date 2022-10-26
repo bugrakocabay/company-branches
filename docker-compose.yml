@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mysqldb:
+    image: mysql
+    ports:
+      - 3308:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=sisifos300
+      - MYSQL_DATABASE=test
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    expose:
+      - 3308
+  app:
+    depends_on:
+      - mysqldb
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+    ports:
+      - 3000:3000
+volumes:
+  db:
