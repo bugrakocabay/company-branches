@@ -25,7 +25,7 @@ import { ConfigModule } from '@nestjs/config';
       models: [User, Branch],
       autoLoadModels: true,
       synchronize: true,
-      //sync: { force: true },
+      sync: { force: true },
     }),
     BranchesModule,
   ],

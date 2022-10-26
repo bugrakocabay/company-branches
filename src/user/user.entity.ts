@@ -1,8 +1,8 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
 enum roleType {
-  OWNER = 'owner',
-  EMPLOYEE = 'employee',
+  owner = 'owner',
+  employee = 'employee',
 }
 
 @Table
